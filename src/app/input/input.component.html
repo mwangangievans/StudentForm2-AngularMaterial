@@ -22,7 +22,7 @@
     <p>
       <mat-form-field appearance="outline">
         <mat-label>Program</mat-label><br/>
-        <mat-select id="prog" formControlName="programId" placeholder="Select Blog">
+        <mat-select id="prog" formControlName="programId" >
           <mat-option *ngFor="let p of programNames; let i=index;" [value]='i+1'>{{p}}</mat-option>
         </mat-select>
         <mat-error *ngIf="!form.get('programId')?.valid && form.get('programId')?.touched">
