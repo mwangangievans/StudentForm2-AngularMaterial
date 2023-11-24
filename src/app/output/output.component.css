@@ -1,5 +1,8 @@
 mat-card{
-  padding: 1em;
+  margin: 2em;
+  width: fit-content;
+  height: fit-content;
+  padding: 2em;
   background: #FFF3E0;
 }
 

@@ -1,6 +1,9 @@
 mat-card{
-  padding: 1em;
   background-color: #FFFDE7;
+  margin: 2em;
+  width: fit-content;
+  height: fit-content;
+  padding: 2em;
 }
 
 mat-card-title{
