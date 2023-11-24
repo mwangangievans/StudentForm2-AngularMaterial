@@ -48,18 +48,4 @@ export class InputComponent implements OnInit {
 
   }
 
-  public yearValidator(control: FormControl) {
-    if (control.value > 0) {
-      return null;
-    } else {
-      return {programYear: true};
-    }
-  }
-  public programIdValidator(control: FormControl) {
-    if (control.value > 0) {
-      return null;
-    } else {
-      return {programId: true};
-    }
-  }
 }
