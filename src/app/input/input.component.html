@@ -1,0 +1,54 @@
+<mat-card>
+  <mat-card-title>{{title}}</mat-card-title>
+  <form [formGroup]="form" (ngSubmit)="send(form.value)">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+        <mat-error *ngIf="!form.get('firstName')?.valid && form.get('firstName')?.touched">
+          First name is required
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+        <mat-error *ngIf="!form.get('lastName')?.valid && form.get('lastName')?.touched">
+          Last name is required
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Program</mat-label><br/>
+        <mat-select id="prog" formControlName="programId" placeholder="Select Blog">
+          <mat-option *ngFor="let p of programNames; let i=index;" [value]='i+1'>{{p}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!form.get('programId')?.valid && form.get('programId')?.touched">
+          Select the program
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <label>Year</label><br/>
+      <mat-radio-group formControlName="programYear">
+        <mat-radio-button value="1">First</mat-radio-button><br/>
+        <mat-radio-button value="2">Second</mat-radio-button>
+        <mat-error *ngIf="!form.get('programYear')?.valid && form.get('programYear')?.touched">
+          Select the year
+        </mat-error>
+      </mat-radio-group>
+    </p>
+    <p>
+      <label>Options</label><br/>
+      <mat-checkbox value="yes"
+                    formControlName="programCoop">Co-op</mat-checkbox><br/>
+      <mat-checkbox value="yes"
+                    formControlName="programInternship">Internship</mat-checkbox>
+    </p>
+    <p>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Send</button>
+    </p>
+  </form>
+</mat-card>
