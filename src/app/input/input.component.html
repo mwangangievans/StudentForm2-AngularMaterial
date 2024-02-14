@@ -21,7 +21,7 @@
     </p>
     <p>
       <mat-form-field appearance="outline">
-        <mat-label>Program</mat-label><br/>
+        <mat-label>Program</mat-label>
         <mat-select id="prog" formControlName="programId" >
           <mat-option *ngFor="let p of programNames; let i=index;" [value]='i+1'>{{p}}</mat-option>
         </mat-select>
