@@ -14,9 +14,9 @@
     <p>
       <label>Service quality</label><br/>
       <mat-radio-group formControlName="tipRate">
-        <mat-radio-button value="15">Okey - 15%</mat-radio-button><br/>
-        <mat-radio-button value="18">Good - 18%,</mat-radio-button><br/>
-        <mat-radio-button value="20">Excellent - 20%</mat-radio-button><br/>
+        <mat-radio-button value=15>Okey - 15%</mat-radio-button><br/>
+        <mat-radio-button value=18>Good - 18%,</mat-radio-button><br/>
+        <mat-radio-button value=20>Excellent - 20%</mat-radio-button><br/>
         <mat-error *ngIf="!form.get('tipRate')?.valid && form.get('tipRate')?.touched">
           Select Service quality
         </mat-error>

@@ -1,34 +1,30 @@
-<mat-card>
+<mat-card  style="width: 800px;">
   <mat-card-title>{{title}}</mat-card-title>
   <p>
-    <label class="output-label">First Name:</label>
-    <span class="output-value">{{student.firstName}}</span>
-  </p>
-  <p>
-    <label class="output-label">Last Name:</label>
-    <span class="output-value">{{student.lastName}}</span>
-  </p>
-  <p>
-    <label class="output-label">Program:</label>
+    <label class="output-label">tip Rate:</label>
     <span class="output-value">
-      {{(student.programId>0)?programNames[student.programId-1]:""}}
+      {{tipData.tipRate }} %
     </span>
   </p>
   <p>
-    <label class="output-label">Year:</label>
+    <label class="output-label">Cost of Service:</label>
     <span class="output-value">
-      {{(student.programYear>0)?student.programYear:""}}
+      {{tipData.tip | currency}}
     </span>
   </p>
+
   <p>
-    <label class="output-label">Co-op:</label>
-    <span class="output-value">{{student.programCoop?"yes":"no"}}</span>
+    <label class="output-label">Total Tip:</label>
+    <span class="output-value">{{tipData.estimated_tip  | currency}}</span>
   </p>
   <p>
-    <label class="output-label">Internship:</label>
-    <span class="output-value">{{student.programInternship?"yes":"no"}}</span>
+    <label class="output-label">Bill Total :</label>
+    <span class="output-value">{{tipData.Total_amount_including_tip  | currency
+    }}</span>
   </p>
-  <p>
+
+ 
+ 
     <a mat-raised-button routerLink="input">Back to Input</a>
-  </p>
+  
 </mat-card>

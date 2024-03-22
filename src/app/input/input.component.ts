@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Student} from '../student';
 import {StudentDataService} from '../student-data.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import { Tip } from '../student';
 
 @Component({
   selector: 'app-input',
@@ -15,10 +15,10 @@ export class InputComponent implements OnInit {
     'Computer Programmer', 'Systems Technology',
     'Engineering Technician', 'Systems Technician'];
   public form: FormGroup;
-  public student: Student;
   private router: Router;
+  rounded_dollar:any;
+  rounded_cent:any;
   public constructor(dataService: StudentDataService, router: Router) {
-    this.student = dataService.student;
     this.router = router;
 
     this.form = new FormGroup({
@@ -29,12 +29,31 @@ export class InputComponent implements OnInit {
     });
   }
 
-  public calculate(data: Student) {
-    console.log({data});
-  }
+ 
 
   ngOnInit(): void {
 
   }
+
+  public calculate(data: Tip) {
+    let tipRate = Number(data.tipRate);
+    let tipAmount = 0
+  
+    tipAmount =  tipRate/100 * data.tip
+    let totalTip = tipAmount + data.tip
+
+  
+let tipData = {
+  estimated_tip: tipAmount,
+  Total_amount_including_tip : totalTip,
+  tipRate :data.tipRate,
+  tip:data.tip
+}
+localStorage.setItem('tipData', JSON.stringify(tipData));
+this.router.navigate(['output'])
+
+
+
+}
 
 }

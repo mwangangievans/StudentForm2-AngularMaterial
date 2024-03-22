@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'StudentForm2 - Angular Material';
+  title = 'A Tip Calculator';
 }

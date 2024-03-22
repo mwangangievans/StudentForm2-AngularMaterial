@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Student} from '../student';
 import {StudentDataService} from '../student-data.service';
 
 @Component({
@@ -9,11 +8,11 @@ import {StudentDataService} from '../student-data.service';
 })
 export class OutputComponent {
   title = 'Output';
-  public programNames = [
-    'Computer Programmer', 'Systems Technology',
-    'Engineering Technician', 'Systems Technician'];
-  public student: Student;
-  public constructor(dataService: StudentDataService) {
-    this.student = dataService.student;
+ tipData:any
+  public constructor(public dataService: StudentDataService) {
+    this.tipData = this.dataService.autoCompleteFromLocalStorage('tipData')
+
+    console.log("hello",this.tipData);
+    
   }
 }

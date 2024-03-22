@@ -1,16 +1,11 @@
-export class Student {
-  firstName: string;
-  lastName: string;
-  programId: number;
-  programYear: number;
-  programCoop: boolean;
-  programInternship: boolean;
+export class Tip {
+  tip: number;
+  tipRate: string;
+  roundTip: boolean;
   public constructor() {
-    this.firstName = '';
-    this.lastName = '';
-    this.programId = 0;
-    this.programYear = 0;
-    this.programCoop = false;
-    this.programInternship = false;
+    this.tip =0,
+    this.tipRate='',
+    this.roundTip= false
   }
+  
 }
