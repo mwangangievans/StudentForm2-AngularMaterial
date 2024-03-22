@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   styleUrl: './input.component.css'
 })
 export class InputComponent implements OnInit {
-  public title = 'Input';
+  public title = 'Tip Calculator';
   public programNames = [
     'Computer Programmer', 'Systems Technology',
     'Engineering Technician', 'Systems Technician'];
