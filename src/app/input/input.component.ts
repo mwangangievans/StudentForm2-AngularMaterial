@@ -22,26 +22,15 @@ export class InputComponent implements OnInit {
     this.router = router;
 
     this.form = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      programId: new FormControl('', Validators.required),
-      programYear: new FormControl('', Validators.required),
-      programCoop: new FormControl(false),
-      programInternship: new FormControl(false)
+      tip: new FormControl('', Validators.required),
+      tipRate: new FormControl('', Validators.required),
+      roundTip: new FormControl(false),
+    
     });
   }
 
-  public send(data: Student) {
-    this.student.firstName = data.firstName;
-    this.student.lastName = data.lastName;
-    this.student.programId = data.programId;
-    this.student.programYear = data.programYear;
-    this.student.programCoop = data.programCoop;
-    this.student.programInternship = data.programInternship;
-    this.router.navigate(['output']).then(() => {
-      console.log('showing the output data');
-      console.log(data);
-    });
+  public calculate(data: Student) {
+    console.log({data});
   }
 
   ngOnInit(): void {
